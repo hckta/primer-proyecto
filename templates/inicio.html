@@ -7,7 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Este es el primer template que cree/<h1>
+    <h1>Este es el primer template que cree</h1>
+    <p>{{mensaje}}</p>
+    {% if segundo_redondo %}
+    <p style ='color: yellow;'>{{segundos}} </p>
+    {% elif segundo_par %}
+    <p style= 'color: red;' >{{segundos}} </p>
+    {% else %}
+    <p style= 'color: green;' >{{segundos}} </p>
+{% endif %}
+
+{%for numero in listado_de_numeros %}
+<p style="color: blue;" > {{numero}} </p>
+{%endfor%}
     
 </body>
 </html>
