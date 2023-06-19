@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Este es el primer template que cree</h1>
-    <p>{{mensaje}}</p>
+{% extends 'base.html' %}
+{% block title_head %}
+    <title>Prueba</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Este es el primer template que cree</h1>
+{% endblock h1_header %}
+        
+{% block contenido %}
+<p>{{mensaje}}</p>
     {% if segundo_redondo %}
     <p style ='color: yellow;'>{{segundos}} </p>
     {% elif segundo_par %}
@@ -20,6 +20,6 @@
 {%for numero in listado_de_numeros %}
 <p style="color: blue;" > {{numero}} </p>
 {%endfor%}
-
-</body>
-</html>
+{% endblock contenido %}
+    
+    

@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body> 
-    <h2> Se creo un perro con el nombre {{perro.nombre}} y edad {{perro.edad}} </h2>    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title_head %}
+    <title>Crear Perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Perro
+{% endblock h1_header %}
+        
+{% block contenido %}
+ <h2>Se creo un perro con el nombre {{perro.nombre}} y edad {{perro.edad}}</h2>    
+{% endblock contenido %}
