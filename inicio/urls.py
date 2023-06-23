@@ -11,5 +11,8 @@ urlpatterns = [
     path('fecha-actual/', views.fecha_actual,name='fecha_actual'),
     path('saludar/', views.saludar,name='saludar'),
     path('bienvenida/<str:nombre>/<str:apellido>/', views.bienvenida,name='bienvenida'),
-    path('crear-perro/<str:nombre>/<int:edad>/', views.crear_perro,name='crear_perro'),
+    #v1 crear perro 
+    # #path('crear-perro/<str:nombre>/<int:edad>/', views.crear_perro,name='crear_perro'),
+    path('perros/crear/', views.crear_perro,name='crear_perro'),
+    path('perros/', views.listar_perros,name='listar_perros'),
 ]

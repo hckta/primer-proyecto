@@ -5,9 +5,30 @@
 {% endblock title_head %}
 
 {% block h1_header %}
-Perro
+Crear Perro
 {% endblock h1_header %}
         
 {% block contenido %}
+{% comment %} {% if perro %}
  <h2>Se creo un perro con el nombre {{perro.nombre}} y edad {{perro.edad}}</h2>    
-{% endblock contenido %}
+ {% endif %} {% endcomment %}
+ <form action="" method="POST">
+    {% csrf_token %}
+    {% comment %} v1 {% endcomment %}
+    {% comment %} <p>
+        Nombre:
+        <input type="text" name="nombre">
+
+    </p>
+    <p>
+        Edad:
+        <input type="number" name="edad">
+    </p> {% endcomment %}
+
+    {% comment %} v2 {% endcomment %}
+    
+    {{formulario}}
+    <button>Crear</button>
+
+</form>
+ {% endblock contenido %}
