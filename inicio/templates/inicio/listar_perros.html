@@ -14,6 +14,7 @@ Listado de Perros
     <a class="navbar-brand" href={% url 'inicio:crear_perro' %}>Crear perro</a>
 </button>
 <form action="" method="get">
+    {% csrf_token %}
     {{formulario}}
 
     <button>Buscar</button>
@@ -21,9 +22,11 @@ Listado de Perros
 
 {% if perros %}
 {% for perro in perros %}
-<li>Nombre: {{perro.nombre}} - Edad: {{perro.edad}}</li>
+{% comment %} <li>Nombre: {{perro.nombre}} - Edad: {{perro.edad}}</li> {% endcomment %}
+<li> {{perro}} </li>
+<a href={% url 'inicio:eliminar_perro' perro.id %}>Eliminar</a>
+<a href={% url 'inicio:modificar_perro' perro.id %}>Modificar</a>
 {% endfor %}
-<p>No se encontraron datos cargados</p>
 {% endif %}
-
+<p>No se encontraron datos cargados</p>
  {% endblock contenido %}

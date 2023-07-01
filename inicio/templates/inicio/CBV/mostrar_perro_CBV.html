@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+    <title>Perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+{{perro.nombre}}
+{% endblock h1_header %}
+        
+{% block contenido %}
+<li>Edad: {{perro.edad}} </li>
+<li>Descripcion: {{perro.descripcion}} </li>
+<button>Crear</button>
+
+</form>
+ {% endblock contenido %}
