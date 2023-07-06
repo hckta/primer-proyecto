@@ -9,6 +9,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 #v1
 # def inicio(request):
 #     return HttpResponse('Hola soy Octavio')
@@ -49,6 +51,7 @@ from django.views.generic.detail import DetailView
 #     renderizar_template = template.render(diccionario)
 #     return HttpResponse(renderizar_template)
 #4
+@login_required
 def prueba(request):
     
     # template = loader.get_template('inicio.html')
@@ -173,13 +176,13 @@ class Listar_Perros(ListView):
     template_name = "inicio/CBV/listar_perros_CBV.html"
     context_object_name = 'perros'
     
-class ModificarPerro(UpdateView):
+class ModificarPerro(LoginRequiredMixin,UpdateView):
     model = Perro
     template_name = "inicio/CBV/modificar_perro_CBV.html"
     fields = ['nombre','edad', 'descripcion']
     success_url = reverse_lazy('inicio:listar_perros')
     
-class EliminarPerro(DeleteView):
+class EliminarPerro(LoginRequiredMixin,DeleteView):
     model = Perro
     template_name = "inicio/CBV/eliminar_perro_CBV.html"
     success_url = reverse_lazy('inicio:listar_perros')
