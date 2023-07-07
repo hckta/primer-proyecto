@@ -21,8 +21,8 @@ urlpatterns = [
     #CBV
     path('perros/', views.Listar_Perros.as_view(), name='listar_perros'),
     path('perros/crear/', views.CrearPerro.as_view(), name='crear_perro'),
-    path('perros/eliminar/<int:pk>', views.EliminarPerro.as_view(), name='eliminar_perro'),
-    path('perros/modificar/<int:pk>', views.ModificarPerro.as_view(), name='modificar_perro'),
-    path('perros/mostrar/<int:pk>', views.MostrarPerro.as_view(), name='mostrar_perro'),
+    path('perros/eliminar/<int:pk>/', views.EliminarPerro.as_view(), name='eliminar_perro'),
+    path('perros/modificar/<int:pk>/', views.ModificarPerro.as_view(), name='modificar_perro'),
+    path('perros/<int:pk>/', views.MostrarPerro.as_view(), name='mostrar_perro'),
 
 ]
