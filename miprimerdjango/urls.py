@@ -18,8 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 # from miprimerdjango.views import inicio, segunda_vista, fecha_actual, saludar
 from inicio import views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('', include('inicio.urls')),
     path('usuario/', include('usuario.urls')),
     path('admin/', admin.site.urls),
     ]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
